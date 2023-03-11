@@ -1,0 +1,336 @@
+:root {
+    --white: white;
+    --grey: rgb(201, 201, 201);
+    --dark: rgb(42, 42, 42);
+    --darkShadow: rgb(191, 191, 191);
+    --blue: rgb(0, 107, 201);
+    --transparent: transparent;
+
+    --headerWidth: 100%;
+    --headerHeight: 50px;
+
+    --search-padding: 0.5rem 1rem;
+
+}
+
+* {
+    /* font-family: 'Dancing Script', cursive; */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    border: 1px solid transparent;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    overflow: hidden;
+}
+
+.content {
+    height: max-content;
+    min-width: 10px;
+    padding: 1rem;
+    border-radius: 3px;
+
+}
+
+/* HEADER */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: var(--headerWidth);
+    height: var(--headerHeight);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 4%;
+    z-index: 100;
+}
+
+.header .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+
+.header .logo i {
+    padding-right: .5rem;
+}
+
+.header .navbar a {
+    font-size: 1rem;
+    margin: 0 1rem;
+    transition: .2s ease-in-out;
+    padding: 15px 5px;
+}
+
+.header .navbar a:hover {
+    border-radius: 0 0 5px 5px;
+}
+
+.header .navbar .active {}
+
+.search-bar {
+    border-radius: 1.5rem;
+    padding: var(--search-padding);
+    height: var(--searchbarHeight);
+}
+.search-bar button {
+    background: transparent;
+}
+.search-bar input[type="search"] {
+    background: transparent;
+    width: 18vw;
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    /* color: var(--dark); */
+}
+
+nav .search-bar input[type="search"]::placeholder {
+    color: var(--grey);
+}
+
+.header .user {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: transparent;
+    width: max-content;
+    height: 35px;
+    border-radius: 50px 20px 0px 50px;
+}
+
+.header .user .name {
+    padding: 0 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #4f4f4f;
+    font-weight: 600;
+    font-size: 13px;
+    font-style: italic;
+    box-shadow: 0 0;
+}
+
+.header .user .photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    overflow: hidden;
+    border: white 4px solid;
+    transition: .3s ease-out;
+}
+
+.header .user .photo:hover {
+    transform: scale(1.1);
+
+}
+
+.header .user .photo img {
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.header .menu {
+    /* display: flex;
+  justify-content: space-evenly; */
+    /* gap: 50px; */
+}
+
+.header .menu i {
+    transition: 0.3s;
+    font-size: 25px;
+    color: rgb(20, 20, 20);
+}
+
+.header .menu,
+.header .bag_button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+}
+
+.header .menu i,
+.bag_button i {
+    color: rgb(0, 71, 84);
+}
+
+.header .menu:hover,
+.bag_button:hover {
+    background: rgba(102, 102, 102, 0.1);
+    color: rgb(0, 0, 0);
+
+}
+
+.header .list-menu {
+    position: absolute;
+    top: 100%;
+    right: 10px;
+    background: #fff;
+    border-radius: .5rem;
+    -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    width: 10rem;
+    padding: 15px;
+    opacity: 0;
+    transition: .1s linear;
+    z-index: 100;
+}
+
+.header .list-menu.active {
+    opacity: 1;
+    -webkit-transition: .1s linear;
+    transition: .1s linear;
+    z-index: 100;
+    position: absolute;
+    top: 100%;
+    right: 10px;
+}
+
+.header .list-menu .box {
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.5rem;
+    /* position: relative; */
+    width: 90%;
+    height: 25px;
+    padding: 5px;
+    border-bottom: 2px solid rgba(193, 193, 193, 0);
+    transition: .2s;
+}
+
+.header .list-menu .box:hover {
+    border-bottom: 2px solid rgb(126, 157, 197);
+}
+
+/* BUTTONS */
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: max-content;
+    width: 50px;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.button.shadow {
+    box-shadow: 3px 3px 10px var(--darkShadow);
+}
+
+/* ICONS */
+.icon {
+    cursor: pointer;
+    padding: .9rem 1rem;
+    border-radius: 50%;
+}
+
+
+/* CARDS GRID */
+
+.cards {
+    gap: .7rem;
+    height: calc(100vh - var(--headerHeight) - 3.5rem);
+    overflow: scroll;
+}
+
+.cards.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cards.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto-fill, max-content);
+}
+
+.cards.grid.column12 {
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.cards.grid.column10 {
+    grid-template-columns: repeat(10, 1fr);
+}
+
+.cards.grid.column8 {
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.cards.grid.column6 {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.cards.grid.column4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.cards.grid.column3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.0rem;
+
+}
+
+.cards.grid.column2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cards.grid.column1 {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.card {
+    width: 250px;
+    height: 300px;
+}
+
+/* BACKGROUND COLOR  */
+.white {
+    background: var(--white);
+    color: var(--dark);
+}
+
+.dark {
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+.blue {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.transparent {
+    background-color: var(--transparent);
+    color: var(--dark);
+}
+
+.darkShadow {
+    background-color: var(--darkShadow);
+    color: var(--dark);
+}
+
+/* COLOR */
+
+/* FONT FAMILY */
+
+
+/* HOVER TYPE */
+.blow:hover {
+    transform: scale(1.01);
+}

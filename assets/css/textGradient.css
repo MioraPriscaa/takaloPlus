@@ -1,0 +1,15 @@
+.textGradient{
+    /* font-size: 50px; */
+    font-weight: bolder;
+    outline: none;
+    background: linear-gradient(90deg, #009caa 0%, #0061ac 25%, #0041b2 50%, #7c00a2 75%, #a00068 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    /* animation: animate 100s linear infinite; */
+  }
+  @keyframes animate {
+    to{
+      background-position: 400%;
+    }
+  }

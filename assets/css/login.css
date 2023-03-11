@@ -1,0 +1,217 @@
+:root {
+    --color_white: hsl(252, 30%, 100%);
+    --color_light: hsl(252, 30%, 95%);
+    --color_gray: hsl(252, 15%, 65%);
+    --color_primary: hsl(265, 88%, 41%);
+    --color_secondary: hsl(252, 100%, 90%);
+    --color_success: hsl(252, 95%, 65%);
+    --color_danger: hsl(0, 95%, 65%);
+    --color_dark: hsl(252, 30%, 17%);
+    --color_black: hsl(252, 30%, 10%);
+    --color_basic: rgb(251, 251, 251);
+    --color_background: #b2b0b041;
+    --color_button: #01bec8;
+    --color_button_hover: #02cce3;
+    --color_rose: #e302b2;
+  
+    --border-radius: 2rem;
+    --card-border-radius: 1rem;
+    --btn-padding: 0.6rem 2rem;
+    --search-padding: 0.5rem 1rem;
+    --card-padding: 1rem;
+  
+    --sticky-top-left: 5.4rem;
+    --sticky-top-right: -18rem;
+  }
+
+  
+.login_form {
+    position: absolute;
+    top: -100%;
+    left: 33%;
+    width: max-content;
+    /* background: red; */
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgb(192, 192, 192);
+    overflow: hidden;
+    margin: 0 20px;
+    z-index: 100;
+    transition: .6s;
+
+}
+
+.login_form.active {
+    top: 100px;
+    z-index: 100;
+    animation: down 0.5s ease-in-out;
+
+}
+
+
+.login_form.active~.content {
+    filter: brightness(0.5) saturate(0.5) contrast(1) blur(2px);
+
+}
+
+.login_form .forms {
+    display: flex;
+    align-items: center;
+    height: 440px;
+    width: 100%;
+    transition: height 0.2s ease;
+    /* background: rgb(132, 64, 64); */
+
+}
+
+
+.login_form .form {
+    width: 400px;
+    padding: 30px;
+    transition: margin-left 0.18s ease;
+}
+
+.login_form .login.active {
+    margin-left: -50%;
+    opacity: 1;
+    transition: margin-left 0.18s ease, opacity 0.15s ease;
+}
+
+.login_form .signup {
+    opacity: 1;
+    transition: opacity 0.09s ease;
+}
+
+.login_form .signup.active {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+.login_form .forms.active {
+    height: 600px;
+}
+
+.form {
+    /* border: 1px solid; */
+}
+
+.login_form .form .title {
+    position: relative;
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.form .title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background-color: var(--color_rose);
+    border-radius: 25px;
+}
+
+.form .input-field {
+    position: relative;
+    height: 50px;
+    width: 330px;
+    margin-top: 30px;
+}
+
+.input-field input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 35px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+    background: var(--color_basic);
+    border-top: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+
+.input-field input:is(:focus) {
+    border-bottom-color: #4070f4;
+}
+
+.input-field i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 18px;
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus)~i {
+    color: #4070f4;
+}
+
+.input-field i.icon {
+    left: 0;
+}
+
+.input-field i.showHidePw {
+    right: 0;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.form .checkbox-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.checkbox-text .checkbox-content {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-content input {
+    margin: 0 8px -2px 4px;
+    accent-color: #4070f4;
+}
+
+.form .text {
+    color: #333;
+    font-size: 14px;
+}
+
+.form a.text {
+    color: #4070f4;
+    text-decoration: none;
+}
+
+.form a:hover {
+    text-decoration: underline;
+}
+
+.form .button {
+    margin-top: 35px;
+}
+
+.form .button input {
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background-color: var(--color_button);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button input:hover {
+    background-color: var(--color_button_hover);
+}
+
+.form .login-signup {
+    margin-top: 30px;
+    text-align: center;
+}

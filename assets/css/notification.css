@@ -1,0 +1,421 @@
+:root {
+}
+
+
+* {
+    /* font-family: 'Dancing Script', cursive; */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+
+body {
+    overflow-y: scroll;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(245, 245, 245);
+}
+
+/* cases */
+.notifications {
+    margin-top: calc(var(--headerHeight) + 1rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: calc(100vh - var(--headerHeight) + 1rem);
+    /* overflow: hidden; */
+    position: relative;
+}
+
+.notifications .cases {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    /* background: #f4f4f4; */
+}
+
+.notifications .cases .case {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 300px;
+    padding: .9rem 1rem;
+    text-align: center;
+    background: #ced8dc;
+    font-size: 80%;
+    border-radius: 5px;
+    font-weight: 600;
+    word-spacing: 3px;
+    transition: all .3s ease;
+    cursor: pointer;
+    color: rgb(82, 91, 95);
+    word-spacing: 2px;
+    letter-spacing: 1px;
+
+}
+
+.notifications .cases .case:hover {
+    background: #becdd3;;
+
+}
+
+.notifications .page {
+    display: grid;
+    padding: 1rem;
+    /* overflow-y: scroll; */
+    height: max-content;
+    padding-bottom: 150px;
+    /* background: rgb(241, 245, 245); */
+
+    /* overflow-y: scroll; */
+    /* height: max-content; */
+
+}
+
+/* 
+.notifications .page.active {
+    display: grid;
+
+
+} */
+
+.notifications .echanges {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 550px);
+    grid-template-rows: repeat(auto-fill, 350px);
+    gap: 1rem;
+    justify-content: center;
+    position: relative;
+    /* overflow-y: scroll; */
+
+    /* background: rgb(67, 146, 155); */
+}
+
+.notifications .echange {
+    background: white;
+    box-shadow: 2px 1px 10px rgb(226, 226, 226);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.notifications .echange .head {
+    height: 50px;
+    width: 100%;
+    padding: .2rem 1rem;
+    background: rgb(255, 255, 255);
+    display: flex;
+    gap: .5rem;
+    /* justify-content: center; */
+    align-items: center;
+    position: relative;
+
+}
+
+.head .photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    overflow: hidden;
+    border: white 4px solid;
+    transition: .3s ease-out;
+}
+
+
+.head .photo:hover {
+    transform: scale(1.1);
+
+}
+
+.head .photo img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.head .pseudo {
+    font-size: .9rem;
+    font-weight: 600;
+    color: #616161;
+}
+
+.head .mots {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2b2b2b;
+
+
+}
+
+
+.notifications .echange .content {
+    display: grid;
+    grid-template-columns: 45% 10% 45%;
+    width: 100%;
+    height: 270px;
+    /* background: #00214a; */
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+
+.notifications .echange .objet {
+    width: max-content;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    gap: 1rem;
+    padding: 1rem 1rem;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    scroll-padding: 30px;
+
+}
+
+.objet {
+    scrollbar-width: normal;
+}
+
+.objet::-webkit-scrollbar {
+    width: 0px;
+    padding: 0rem 1rem;
+
+}
+
+.objet::-webkit-scrollbar-thumb {
+    background-color: rgb(155, 155, 155);
+    border-radius: 10px;
+    padding: 0rem 1rem;
+}
+
+.objet::-webkit-scrollbar-track {
+    background-color: rgb(232, 232, 232);
+}
+
+
+
+.card,
+.addcard {
+    display: flex;
+    width: 200px;
+    height: 250px;
+    /* position: relative; */
+    flex-direction: column;
+    transition: all .3s ease-in-out;
+    /* transform: scale(.5); */
+    /* opacity: 0; */
+}
+
+.card.reveal,
+.addcard.reveal {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.card .image {
+    width: 100%;
+    height: 75%;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgb(255, 255, 255);
+    position: relative;
+}
+
+.card .image img {
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    object-fit: cover;
+    transition: .4s;
+}
+
+.card .image:hover img {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.info {
+    height: 25%;
+    padding: 5px;
+    padding-left: 5%;
+    line-height: 3%;
+    position: relative;
+}
+
+.titre {
+    width: 100%;
+    height: 30%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: capitalize;
+    font-size: 85%;
+    font-weight: 600;
+    color: rgb(61, 61, 61);
+}
+
+.price {
+    width: 100%;
+    height: 30%;
+    font-size: 80%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    color: rgb(61, 61, 61);
+}
+
+.nom {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: max-content;
+    height: auto;
+    font-size: 75%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* font-weight: lighter; */
+    color: rgb(165, 165, 165);
+    font-weight: 600;
+    float: left;
+    z-index: 100;
+    text-shadow: 0px 0px 15px rgb(255, 255, 255);
+}
+
+.heart {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 120%;
+    transition: all .2s ease-in-out;
+    padding: 1rem;
+    border-radius: 50%;
+    background: transparent;
+    z-index: 1000;
+    cursor: pointer;
+
+}
+
+.heart {
+    color: rgba(0, 0, 0, 0.793);
+}
+
+.heart:hover {
+    /* transform: scale(1.3); */
+}
+
+.heart.love {
+    color: rgba(218, 0, 73, 0.72);
+    text-shadow: 0px 0px 1px rgba(206, 0, 69, 0.809);
+}
+
+.descri {
+    width: 100%;
+    height: 30%;
+    font-size: 80%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(151, 151, 151);
+}
+
+.note {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 70%;
+    color: rgb(71, 71, 71);
+    font-weight: 600;
+}
+
+.note i {
+    font-size: 80%;
+    color: rgb(107, 107, 107);
+}
+
+
+.card:hover,
+.addcard:hover {}
+
+.add {
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    padding: 10px 15px;
+    background: radial-gradient(rgb(135, 223, 204), rgb(1, 127, 106));
+    color: transparent;
+    -webkit-background-clip: text;
+    font-size: 1.2rem;
+    border-radius: 10%;
+    transition: all .5s ease .2s;
+}
+
+
+.notifications .echange .vs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.notifications .echange .vs .style {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight:bolder;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: rgb(87, 87, 87);
+    font-weight: 700;
+}
+.notifications .echange .vs .style .left{
+    margin-right: 10px;
+}
+.notifications .echange .vs .style .right{
+    margin-left: 10px;
+    margin-top:-30px ;
+
+}
+
+
+.notifications .echange .accepter,
+.notifications .echange .refuser {
+    position: absolute;
+    bottom: 5px;
+    padding: .3rem 0.5rem;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: .7rem;
+    width: max-content;
+    height: max-content;
+    cursor: pointer;
+    transition: all  .3s ease;
+}
+
+.notifications .echange .accepter {
+    right: 10px;
+    background: rgba(199, 212, 215, 0.481);
+    border: 1px solid rgb(199, 221, 225);
+    color: rgb(114, 133, 132);
+}
+
+.notifications .echange .refuser {
+    left: 10px;
+    background: rgba(219, 200, 207, 0.475);
+    border: 1px solid rgb(230, 211, 211);
+    color: rgb(148, 131, 131);
+}
+
+.notifications .echange .accepter:hover{
+    background-color: rgb(97, 202, 225);
+    color: rgb(255, 255, 255);
+
+}
+.notifications .echange .refuser:hover{
+    background-color: rgb(234, 93, 93);
+    color: rgb(255, 255, 255);
+}
